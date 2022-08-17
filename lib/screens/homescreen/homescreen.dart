@@ -6,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:serene/model/colors.dart';
 import 'package:serene/screens/dashboard/dashboard.dart';
 import 'package:serene/screens/fitness/fitness.dart';
-import 'package:serene/screens/navigation_drawers/navigation_drawer.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:health/health.dart';
 import 'package:serene/screens/profile/profile.dart';

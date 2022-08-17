@@ -1,1 +1,0 @@
-class Dashboard_fetch {}
