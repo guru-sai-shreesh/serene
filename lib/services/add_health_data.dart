@@ -1,9 +1,7 @@
 import 'dart:math';
 
-import 'package:flutter/widgets.dart';
 import 'package:health/health.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:serene/services/fetch_health_data.dart';
+import 'package:serene/services/fit_sync_service.dart';
 
 class AddHealthData {
   int _nofSteps = 10;
@@ -66,6 +64,5 @@ class AddHealthData {
       totalDistance: 1234,
       totalDistanceUnit: HealthDataUnit.FOOT,
     );
-    var _state = success ? AppState.DATA_ADDED : AppState.DATA_NOT_ADDED;
   }
 }

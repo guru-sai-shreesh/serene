@@ -31,7 +31,7 @@ class _ProfileState extends State<Profile> {
                 centerTitle: false,
                 expandedTitleScale: 1.3,
                 titlePadding: EdgeInsets.only(left: 15, bottom: 15),
-                title: Text("Dashboard"),
+                title: Text("Profile"),
               ),
               actions: [
                 IconButton(

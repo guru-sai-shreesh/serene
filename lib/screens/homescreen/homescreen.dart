@@ -8,6 +8,7 @@ import 'package:serene/screens/dashboard/dashboard.dart';
 import 'package:serene/screens/fitness/fitness.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:health/health.dart';
+import 'package:serene/screens/mindful/mindful.dart';
 import 'package:serene/screens/profile/profile.dart';
 import 'package:serene/screens/sleep/sleep.dart';
 import 'package:serene/widget/custom_tab_indicator.dart';
@@ -116,7 +117,7 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screens = [Dashboard(), Sleep(), Fitness(), Profile()];
+    final screens = [Dashboard(), Sleep(), Mindful(), Fitness(), Profile()];
 
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
@@ -139,6 +140,10 @@ class HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.bookmark),
                 label: "Mindful",
+                backgroundColor: Colors.grey),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.directions_run),
+                label: "Fitness",
                 backgroundColor: Colors.grey),
             BottomNavigationBarItem(
                 icon: Icon(Icons.account_circle),

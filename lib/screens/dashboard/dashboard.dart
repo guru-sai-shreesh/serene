@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:serene/model/colors.dart';
 import 'package:serene/services/fetch_health_data.dart';
+import 'package:serene/services/fit_sync_service.dart';
 import 'package:serene/widget/circular_progress_indicator.dart';
 
 class Dashboard extends StatefulWidget {
@@ -60,11 +61,23 @@ class _DashboardState extends State<Dashboard> {
             SliverList(
               delegate: SliverChildListDelegate(
                 [
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: 15, top: 30, right: 15, bottom: 5),
+                    child: Text(
+                      "TODAY'S GOAL",
+                      style: GoogleFonts.openSans(
+                          fontSize: 16,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
                   Container(
                     height: 190,
                     width: 190,
                     decoration: BoxDecoration(
-                        color: AppColors.badgecolor,
+                        color: Colors.white,
+                        // color: AppColors.badgecolor,
                         borderRadius: BorderRadius.circular(25)),
                     margin: EdgeInsets.only(left: 15, right: 15),
                     child: Center(
@@ -73,21 +86,22 @@ class _DashboardState extends State<Dashboard> {
                           Padding(
                             padding: const EdgeInsets.only(left: 0.0),
                             child: RadialProgress(
-                                height: 20.0,
-                                width: 20.0,
-                                progress:
-                                    1 - (steps ?? 0).toDouble() / (1000 / 7)),
+                              height: 160.0,
+                              width: 160.0,
+                              progress: (steps ?? 0).toDouble() / 200,
+                              steps_left: 200 - (steps ?? 0).toInt(),
+                            ),
                           ),
                         ],
                       ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 15, top: 30, right: 15),
+                    padding: EdgeInsets.only(left: 15, top: 10, right: 15),
                     child: Text(
                       "ACTIVITY",
                       style: GoogleFonts.openSans(
-                          fontSize: 20,
+                          fontSize: 16,
                           color: Colors.black,
                           fontWeight: FontWeight.w700),
                     ),
@@ -300,7 +314,7 @@ class _DashboardState extends State<Dashboard> {
                     child: Text(
                       "HEART",
                       style: GoogleFonts.openSans(
-                          fontSize: 20,
+                          fontSize: 16,
                           color: Colors.black,
                           fontWeight: FontWeight.w700),
                     ),
@@ -506,7 +520,7 @@ class _DashboardState extends State<Dashboard> {
                     child: Text(
                       "BODY",
                       style: GoogleFonts.openSans(
-                          fontSize: 20,
+                          fontSize: 16,
                           color: Colors.black,
                           fontWeight: FontWeight.w700),
                     ),
@@ -667,7 +681,7 @@ class _DashboardState extends State<Dashboard> {
                                               fontWeight: FontWeight.w700),
                                           children: <TextSpan>[
                                             TextSpan(
-                                              text: '6 ',
+                                              text: '6',
                                               style: GoogleFonts.openSans(
                                                   fontSize: 34,
                                                   color: Colors.white,
@@ -677,7 +691,7 @@ class _DashboardState extends State<Dashboard> {
                                               text: 'ft',
                                             ),
                                             TextSpan(
-                                              text: ',1 ',
+                                              text: '1',
                                               style: GoogleFonts.openSans(
                                                   fontSize: 34,
                                                   color: Colors.white,

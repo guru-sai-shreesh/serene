@@ -55,6 +55,7 @@ class _MyRegisterState extends State<MyRegister> {
         body: Stack(
           children: [
             SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Container(
                 padding:
                     EdgeInsets.only(top: 50, right: 15, left: 15, bottom: 70),

@@ -1,29 +1,30 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:serene/model/colors.dart';
-import 'package:serene/screens/sleep/sleep_data.dart';
-import 'package:serene/screens/sleep/track_sleep.dart';
+import 'package:serene/screens/mindful/anxiety.dart';
+import 'package:serene/screens/mindful/meditation.dart';
 import 'package:serene/widget/custom_tab_indicator.dart';
 
-class Sleep extends StatefulWidget {
-  const Sleep({Key? key}) : super(key: key);
+class Mindful extends StatefulWidget {
+  const Mindful({Key? key}) : super(key: key);
 
   @override
-  State<Sleep> createState() => _SleepState();
+  State<Mindful> createState() => _MindfulState();
 }
 
-class _SleepState extends State<Sleep> with TickerProviderStateMixin {
+class _MindfulState extends State<Mindful> with TickerProviderStateMixin {
   final List<Tab> myTabs = <Tab>[
     Tab(
       child: Container(
         margin: EdgeInsets.only(right: 23),
-        child: Text("Track Sleep"),
+        child: Text("Meditation"),
       ),
     ),
     Tab(
       child: Container(
         margin: EdgeInsets.only(right: 23),
-        child: Text("Sleep Data"),
+        child: Text("Reduce Anxiety"),
       ),
     ),
   ];
@@ -49,11 +50,11 @@ class _SleepState extends State<Sleep> with TickerProviderStateMixin {
                 centerTitle: false,
                 expandedTitleScale: 1.3,
                 titlePadding: EdgeInsets.only(left: 15, bottom: 15),
-                title: Text("Sleep"),
+                title: Text("Mindful"),
               ),
-              actions: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.add)),
-              ],
+              // actions: [
+              //   IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+              // ],
             ),
             SliverList(
               delegate: SliverChildListDelegate(
@@ -92,8 +93,8 @@ class _SleepState extends State<Sleep> with TickerProviderStateMixin {
                         physics: BouncingScrollPhysics(),
                         controller: _tabController,
                         children: [
-                          TrackSleep(),
-                          SleepData(),
+                          Meditation(),
+                          Anxiety(),
                         ]),
                   )
                 ],

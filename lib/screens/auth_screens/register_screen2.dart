@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:serene/model/colors.dart';
+import 'package:serene/screens/auth_screens/fit_sync.dart';
 import 'package:serene/screens/auth_screens/login_screen.dart';
 import 'dart:io';
 import 'package:intl/intl.dart';
 import 'package:serene/screens/homescreen/homescreen.dart';
+import 'package:serene/services/fit_sync_service.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 import 'package:rounded_modal/rounded_modal.dart';
@@ -55,6 +57,7 @@ class _MyRegister2State extends State<MyRegister2> {
         body: Stack(
           children: [
             SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Container(
                 padding:
                     EdgeInsets.only(top: 50, right: 15, left: 15, bottom: 70),
@@ -499,7 +502,7 @@ class _MyRegister2State extends State<MyRegister2> {
           child: FlatButton(
             onPressed: () {
               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => HomeScreen()));
+                  .push(MaterialPageRoute(builder: (context) => FitSync()));
             },
             child: Container(
               decoration: BoxDecoration(
