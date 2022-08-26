@@ -164,13 +164,137 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Padding(
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height * 0.55)),
+                              top: MediaQuery.of(context).size.height * 0.2)),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5, bottom: 5),
+                            child: Text(
+                              "Username/Email",
+                              style: GoogleFonts.openSans(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 47,
+                            width: MediaQuery.of(context).size.width * 0.85,
+                            child: TextField(
+                              cursorHeight: 18,
+                              cursorColor: AppColors.primaryColor,
+                              style: GoogleFonts.openSans(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.black54,
+                              ),
+                              decoration: InputDecoration(
+                                fillColor: Colors.white,
+                                filled: true,
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: const BorderSide(
+                                    color: Color(0xFF1976D2),
+                                    width: 2,
+                                  ),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: const BorderSide(
+                                    color: Colors.black26,
+                                    width: 2,
+                                  ),
+                                ),
+                                hintStyle: GoogleFonts.openSans(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black54,
+                                ),
+                                hintText: 'Enter Username',
+                                border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10.0)),
+                                  borderSide: BorderSide.none,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5, bottom: 5),
+                            child: Text(
+                              "Password",
+                              style: GoogleFonts.openSans(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 47,
+                            width: MediaQuery.of(context).size.width * 0.85,
+                            child: TextField(
+                              obscureText: true,
+                              cursorHeight: 18,
+                              cursorColor: AppColors.primaryColor,
+                              style: GoogleFonts.openSans(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.black54,
+                              ),
+                              decoration: InputDecoration(
+                                fillColor: Colors.white,
+                                filled: true,
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: const BorderSide(
+                                    color: Color(0xFF1976D2),
+                                    width: 2,
+                                  ),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: const BorderSide(
+                                    color: Colors.black26,
+                                    width: 2,
+                                  ),
+                                ),
+                                hintStyle: GoogleFonts.openSans(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black54,
+                                ),
+                                hintText: 'Enter Password',
+                                border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10.0)),
+                                  borderSide: BorderSide.none,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                       const SizedBox(
                         height: 20,
                       ),
                       FlatButton(
                         onPressed: () {
+                          Navigator.of(context).pop();
                           Navigator.of(context).push(MaterialPageRoute(
+                              settings: RouteSettings(
+                                name: "home",
+                              ),
                               builder: (context) => MyRegister()));
                         },
                         child: Container(
@@ -223,6 +347,94 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => MyRegister()));
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'Not registered? ',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black54,
+                              ),
+                            ),
+                            const Text(
+                              'Sign Up',
+                              style: TextStyle(
+                                // decoration: TextDecoration.underline,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.black87,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      // SizedBox(
+                      //   height: 40,
+                      // ),
+                      // FlatButton(
+                      //   onPressed: () {
+                      //     Navigator.of(context).push(MaterialPageRoute(
+                      //         builder: (context) => MyRegister()));
+                      //   },
+                      //   child: Container(
+                      //     decoration: BoxDecoration(
+                      //       borderRadius: BorderRadius.circular(10),
+                      //       gradient: LinearGradient(
+                      //         colors: <Color>[
+                      //           Color(0xFF0D47A1),
+                      //           Color(0xFF1976D2),
+                      //           Color(0xFF42A5F5),
+                      //         ],
+                      //       ),
+                      //     ),
+                      //     margin: EdgeInsets.only(top: 7.5, bottom: 7.5),
+                      //     height: 40,
+                      //     width: MediaQuery.of(context).size.width * 0.85,
+                      //     child: Center(
+                      //       child: Row(
+                      //         mainAxisAlignment: MainAxisAlignment.center,
+                      //         children: [
+                      //           const Text(
+                      //             'Sign In',
+                      //             style: TextStyle(
+                      //               color: Colors.white,
+                      //               fontSize: 17,
+                      //               fontWeight: FontWeight.w500,
+                      //             ),
+                      //           ),
+                      //           // Padding(
+                      //           //   padding: const EdgeInsets.only(
+                      //           //       top: 5.0, bottom: 5.0),
+                      //           //   child: CircleAvatar(
+                      //           //     radius: 30,
+                      //           //     backgroundColor: Colors.transparent,
+                      //           //     child: IconButton(
+                      //           //       color: Colors.white,
+                      //           //       onPressed: () {
+                      //           //         Navigator.of(context).pop();
+                      //           //         Navigator.of(context).push(
+                      //           //             MaterialPageRoute(
+                      //           //                 builder: (context) =>
+                      //           //                     HomeScreen()));
+                      //           //       },
+                      //           //       icon: const Icon(Icons.arrow_forward),
+                      //           //     ),
+                      //           //   ),
+                      //           // ),
+                      //         ],
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ]),
               ),
             ]),

@@ -40,16 +40,6 @@ class _FitnessState extends State<Fitness> {
             SliverList(
               delegate: SliverChildListDelegate(
                 [
-                  Padding(
-                    padding: EdgeInsets.only(left: 15, top: 30, right: 15),
-                    child: Text(
-                      "ACTIVITY",
-                      style: GoogleFonts.openSans(
-                          fontSize: 20,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
                   Card(
                     margin: EdgeInsets.all(10),
                     color: AppColors.cardcolor,
@@ -58,95 +48,16 @@ class _FitnessState extends State<Fitness> {
                       borderRadius: BorderRadius.circular(25),
                     ),
                     child: Container(
-                      margin: EdgeInsets.only(left: 10, right: 10),
-                      height: 110,
-                      width: MediaQuery.of(context).size.width,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding:
-                                EdgeInsets.only(left: 15, top: 10, right: 15),
-                            child: Row(
-                              children: [
-                                Text(
-                                  "STEPS COUNT",
-                                  style: GoogleFonts.openSans(
-                                      fontSize: 15,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                                Spacer(),
-                                Text(
-                                  "Just Now",
-                                  style: GoogleFonts.openSans(
-                                      fontSize: 14,
-                                      color: Colors.white60,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                                Icon(
-                                  Icons.arrow_forward_ios,
+                        margin: EdgeInsets.only(left: 10, right: 10),
+                        height: 110,
+                        width: MediaQuery.of(context).size.width,
+                        child: Center(
+                          child: Text("Fitness Card",
+                              style: GoogleFonts.openSans(
                                   color: Colors.white,
-                                  size: 12,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                      padding: EdgeInsets.only(
-                                          left: 15, top: 2, right: 15),
-                                      child: RichText(
-                                        text: TextSpan(
-                                          style: GoogleFonts.openSans(
-                                              fontSize: 15,
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w700),
-                                          children: <TextSpan>[
-                                            TextSpan(
-                                              text: '6500',
-                                              style: GoogleFonts.openSans(
-                                                  fontSize: 34,
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.w600),
-                                            ),
-                                            TextSpan(
-                                              text: ' of 8000 Steps',
-                                            ),
-                                          ],
-                                        ),
-                                      )),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                        left: 15, top: 0, right: 15),
-                                    child: Text(
-                                      'Last 7 days',
-                                      style: GoogleFonts.openSans(
-                                          fontSize: 14,
-                                          color: Colors.white60,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Spacer(),
-                              // Padding(
-                              //   padding: const EdgeInsets.only(right: 30),
-                              //   child: Icon(
-                              //     Icons.favorite,
-                              //     color: Colors.white,
-                              //     size: 40,
-                              //   ),
-                              // )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w700)),
+                        )),
                   ),
                 ],
               ),

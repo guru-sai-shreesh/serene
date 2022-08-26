@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:serene/model/colors.dart';
 import 'package:serene/screens/auth_screens/fit_sync.dart';

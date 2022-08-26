@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:serene/model/colors.dart';
 import 'package:serene/screens/homescreen/homescreen.dart';
@@ -102,7 +103,9 @@ class _FitSyncState extends State<FitSync> {
                 centerTitle: false,
                 expandedTitleScale: 1.3,
                 titlePadding: EdgeInsets.only(left: 15, bottom: 15),
-                title: Text("Google Fit Sync"),
+                title: Text(
+                  "Google Fit Sync",
+                ),
               ),
             ),
             SliverList(
@@ -118,23 +121,29 @@ class _FitSyncState extends State<FitSync> {
                   //         fontWeight: FontWeight.w700),
                   //   ),
                   // ),
-                  GestureDetector(
-                    onTap: () async {
-                      await syncPerm();
-                    },
-                    child: Card(
-                      margin: EdgeInsets.all(10),
-                      color: AppColors.cardcolor,
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: Container(
-                        height: 40,
-                        child: Center(child: Text("Sync Google fit")),
+                  Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: OutlinedButton.icon(
+                      style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ))),
+                      icon: SvgPicture.asset('assets/images/google.svg'),
+                      onPressed: () async {
+                        await syncPerm();
+                      },
+                      label: Container(
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        child: Text(
+                          'Sync with Google fit',
+                          style: TextStyle(
+                              color: Colors.grey, fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
             )

@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:serene/model/colors.dart';
 import 'package:serene/screens/mindful/anxiety.dart';
 import 'package:serene/screens/mindful/meditation.dart';
+import 'package:serene/screens/mindful/questionare1.dart';
 import 'package:serene/widget/custom_tab_indicator.dart';
 
 class Mindful extends StatefulWidget {
@@ -36,6 +37,16 @@ class _MindfulState extends State<Mindful> with TickerProviderStateMixin {
       color: Colors.white,
       child: Scaffold(
         backgroundColor: Colors.transparent,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => Questionare1()));
+          },
+          backgroundColor: AppColors.cardcolor,
+          child: const Icon(
+            Icons.chat_bubble,
+          ),
+        ),
         body: CustomScrollView(
           physics: BouncingScrollPhysics(),
           slivers: [
@@ -45,7 +56,7 @@ class _MindfulState extends State<Mindful> with TickerProviderStateMixin {
               backgroundColor: Colors.white,
               elevation: 0,
               pinned: true,
-              expandedHeight: 110,
+              expandedHeight: 70,
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: false,
                 expandedTitleScale: 1.3,

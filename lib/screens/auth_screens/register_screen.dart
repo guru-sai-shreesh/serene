@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:serene/model/colors.dart';
 import 'package:serene/screens/auth_screens/login_screen.dart';
@@ -116,26 +115,6 @@ class _MyRegisterState extends State<MyRegister> {
                                   backgroundImage: NetworkImage(
                                       'https://yt3.ggpht.com/ytc/AKedOLRTjSE3cSLWjjTu06H1vmZ3bpTG8SrNONwsfrVh8Q=s900-c-k-c0x00ffffff-no-rj'),
                                 ),
-                              ),
-                            ),
-                            Positioned(
-                              bottom: 10,
-                              right: 10,
-                              child: GestureDetector(
-                                onTap: () async {
-                                  FilePickerResult? result =
-                                      await FilePicker.platform.pickFiles();
-
-                                  if (result != null) {
-                                    file = File(result.files.single.path ?? "");
-                                  } else {
-                                    // User canceled the picker
-                                  }
-                                },
-                                child: CircleAvatar(
-                                    radius: 15,
-                                    backgroundImage: NetworkImage(
-                                        "https://t4.ftcdn.net/jpg/02/83/72/41/360_F_283724163_kIWm6DfeFN0zhm8Pc0xelROcxxbAiEFI.jpg")),
                               ),
                             ),
                           ],

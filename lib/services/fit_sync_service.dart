@@ -1,5 +1,6 @@
 import 'package:health/health.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:serene/main.dart';
 
 final types = [
   HealthDataType.STEPS,
@@ -36,6 +37,7 @@ Future<void> syncPerm() async {
   await Permission.activityRecognition.request();
   await Permission.location.request();
 }
+
 // }
 
 

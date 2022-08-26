@@ -27,6 +27,7 @@ class _SleepState extends State<Sleep> with TickerProviderStateMixin {
       ),
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 2, vsync: this);
@@ -44,7 +45,7 @@ class _SleepState extends State<Sleep> with TickerProviderStateMixin {
               backgroundColor: Colors.white,
               elevation: 0,
               pinned: true,
-              expandedHeight: 110,
+              expandedHeight: 70,
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: false,
                 expandedTitleScale: 1.3,

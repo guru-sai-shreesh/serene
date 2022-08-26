@@ -28,11 +28,11 @@ class _SleepDataState extends State<SleepData> {
             ),
           ),
           Card(
-            margin: EdgeInsets.all(10),
-            color: AppColors.cardcolor,
-            elevation: 0,
+            margin: EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
+            color: AppColors.cardcolor.withOpacity(0.9),
+            elevation: 3,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(15),
             ),
             child: Container(
               margin: EdgeInsets.only(left: 10, right: 10),
@@ -166,10 +166,10 @@ class _SleepDataState extends State<SleepData> {
           ),
           Card(
             margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-            color: AppColors.cardcolor,
-            elevation: 0,
+            color: AppColors.cardcolor.withOpacity(0.9),
+            elevation: 3,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(15),
             ),
             child: Container(
               margin: EdgeInsets.only(left: 10, right: 10),
@@ -303,10 +303,10 @@ class _SleepDataState extends State<SleepData> {
           ),
           Card(
             margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-            color: AppColors.cardcolor,
-            elevation: 0,
+            color: AppColors.cardcolor.withOpacity(0.9),
+            elevation: 3,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(15),
             ),
             child: Container(
               margin: EdgeInsets.only(left: 10, right: 10),

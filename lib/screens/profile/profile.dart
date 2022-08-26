@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:serene/main.dart';
 import 'package:serene/model/colors.dart';
+import 'package:serene/screens/auth_screens/fit_sync.dart';
+import 'package:serene/screens/auth_screens/googleOauth.dart';
 import 'package:serene/screens/auth_screens/login_screen.dart';
+import 'package:serene/screens/dashboard/dashboard.dart';
+import 'package:serene/services/fit_sync_service.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -26,47 +31,43 @@ class _ProfileState extends State<Profile> {
               backgroundColor: Colors.white,
               elevation: 0,
               pinned: true,
-              expandedHeight: 110,
+              expandedHeight: 70,
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: false,
                 expandedTitleScale: 1.3,
                 titlePadding: EdgeInsets.only(left: 15, bottom: 15),
                 title: Text("Profile"),
               ),
-              actions: [
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.notifications_outlined)),
-                IconButton(onPressed: () {}, icon: Icon(Icons.add)),
-              ],
             ),
             SliverList(
               delegate: SliverChildListDelegate(
                 [
-                  Padding(
-                    padding: EdgeInsets.only(left: 15, top: 30, right: 15),
-                    child: Text(
-                      "ACTIVITY",
-                      style: GoogleFonts.openSans(
-                          fontSize: 20,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
                   GestureDetector(
-                    onTap: (() {
+                    onTap: (() async {
+                      // await logoutPref();
+                      count = 0;
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => LoginScreen()));
+                          builder: (context) => MyHomePage(
+                                title: 'login',
+                              )));
                     }),
                     child: Card(
-                      margin: EdgeInsets.all(10),
+                      margin: EdgeInsets.only(top: 20, left: 15, right: 15),
                       color: AppColors.cardcolor,
                       elevation: 0,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       child: Container(
+                        width: MediaQuery.of(context).size.width * 0.4,
                         height: 40,
-                        child: Center(child: Text("Logout")),
+                        child: Center(
+                          child: Text("Logout",
+                              style: GoogleFonts.openSans(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600)),
+                        ),
                       ),
                     ),
                   ),

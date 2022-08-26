@@ -38,17 +38,17 @@ dependencies:
   cupertino_icons: ^1.0.2
   positioned_tap_detector: ^1.0.3
   provider: ^6.0.2
-  flutter_speed_dial: ^6.0.0
   shared_preferences: ^2.0.15
   flutter_secure_storage: ^5.0.2
   badges: ^2.0.3
   simple_gradient_text: ^1.2.3
   url_launcher: ^6.1.5
-  file_picker: ^5.0.1
   permission_handler: ^10.0.0
   health: ^4.1.1
   rounded_modal: ^1.0.1
-  flutter_rounded_date_picker: ^3.0.1
+  amazon_cognito_identity_dart_2: ^0.1.25+4
+  webview_flutter: ^3.0.4
+  audioplayer: ^0.8.1
 
 dev_dependencies:
   flutter_test:
@@ -82,6 +82,8 @@ flutter:
     - assets/images/clg_logo.png
     - assets/images/Icon.png
     - assets/images/login.png
+    - assets/images/google.svg
+    - assets/images/med.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
